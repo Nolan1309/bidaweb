@@ -1,0 +1,9 @@
+F:\Code\PhatTrienUngDungTM\QuanLiBiDa_Web\Web_BUS\bin\Debug\Web_BUS.dll
+F:\Code\PhatTrienUngDungTM\QuanLiBiDa_Web\Web_BUS\bin\Debug\Web_BUS.pdb
+F:\Code\PhatTrienUngDungTM\QuanLiBiDa_Web\Web_BUS\bin\Debug\Web_DAL.dll
+F:\Code\PhatTrienUngDungTM\QuanLiBiDa_Web\Web_BUS\bin\Debug\Web_DTO.dll
+F:\Code\PhatTrienUngDungTM\QuanLiBiDa_Web\Web_BUS\bin\Debug\Web_DAL.pdb
+F:\Code\PhatTrienUngDungTM\QuanLiBiDa_Web\Web_BUS\bin\Debug\Web_DTO.pdb
+F:\Code\PhatTrienUngDungTM\QuanLiBiDa_Web\Web_BUS\obj\Debug\Web_BUS.csprojResolveAssemblyReference.cache
+F:\Code\PhatTrienUngDungTM\QuanLiBiDa_Web\Web_BUS\obj\Debug\Web_BUS.dll
+F:\Code\PhatTrienUngDungTM\QuanLiBiDa_Web\Web_BUS\obj\Debug\Web_BUS.pdb

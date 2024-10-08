@@ -1,0 +1,8 @@
+F:\Code\PhatTrienUngDungTM\QuanLiBiDa_Web\Web_DAL\bin\Debug\Web_DAL.dll
+F:\Code\PhatTrienUngDungTM\QuanLiBiDa_Web\Web_DAL\bin\Debug\Web_DAL.pdb
+F:\Code\PhatTrienUngDungTM\QuanLiBiDa_Web\Web_DAL\bin\Debug\Web_DTO.dll
+F:\Code\PhatTrienUngDungTM\QuanLiBiDa_Web\Web_DAL\bin\Debug\Web_DTO.pdb
+F:\Code\PhatTrienUngDungTM\QuanLiBiDa_Web\Web_DAL\obj\Debug\Web_DAL.csprojResolveAssemblyReference.cache
+F:\Code\PhatTrienUngDungTM\QuanLiBiDa_Web\Web_DAL\obj\Debug\Web_DAL.dll
+F:\Code\PhatTrienUngDungTM\QuanLiBiDa_Web\Web_DAL\obj\Debug\Web_DAL.pdb
+F:\Code\PhatTrienUngDungTM\QuanLiBiDa_Web\Web_DAL\bin\Debug\Web_DAL.dll.config
