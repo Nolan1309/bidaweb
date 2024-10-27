@@ -13,7 +13,7 @@ namespace Web_DAL
 {
     public class DatabaseConnection : IDisposable
     {
-        private string connectionString = "Data Source=DESKTOP-MEUMH4V;Initial Catalog=DoAnQuanLyQuanBida1;Integrated Security=True";
+        private string connectionString = "Data Source=DESKTOP-MEUMH4V;Initial Catalog=DoAnQuanLyQuanBida2;Integrated Security=True";
         private SqlConnection connection;
         private SqlCommand command;
 

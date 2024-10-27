@@ -2,4 +2,3 @@ F:\Code\PhatTrienUngDungTM\QuanLiBiDa_Web\Web_DTO\bin\Debug\Web_DTO.dll
 F:\Code\PhatTrienUngDungTM\QuanLiBiDa_Web\Web_DTO\bin\Debug\Web_DTO.pdb
 F:\Code\PhatTrienUngDungTM\QuanLiBiDa_Web\Web_DTO\obj\Debug\Web_DTO.dll
 F:\Code\PhatTrienUngDungTM\QuanLiBiDa_Web\Web_DTO\obj\Debug\Web_DTO.pdb
-F:\Code\PhatTrienUngDungTM\QuanLiBiDa_Web\Web_DTO\obj\Debug\Web_DTO.csprojResolveAssemblyReference.cache

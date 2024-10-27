@@ -12,8 +12,7 @@ namespace Web_DTO
         public string TenBan { get; set; }
         public string MaKV { get; set; }
         public string TrangThai { get; set; }
-        public int? HDHienTai { get; set; }
-        public string MaKH { get; set; }
+
     }
 
 }

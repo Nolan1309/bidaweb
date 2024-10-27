@@ -34,9 +34,9 @@ namespace Web_BUS
         }
 
         // Cập nhật trạng thái bàn và mã khách hàng
-        public void UpdateBanTrangThai(string maBan, string maKH, string trangThai, HoaDonDTO hoaDonMoi)
+        public void UpdateBanTrangThai(string maBan, string maKV, string trangThai, HoaDonDTO hoaDonMoi)
         {
-            banDAL.UpdateBanTrangThai(maBan, maKH, trangThai, hoaDonMoi);
+            banDAL.UpdateBanTrangThai(maBan, maKV, trangThai, hoaDonMoi);
         }
     }
 

@@ -34,7 +34,7 @@ namespace QuanLiBiDa_Web
                 TenKH = tenKH,
                 SDT = soDienThoai,
                 MatKhau = matKhau,
-                MaLKH = "LKH003", 
+                MaLKH = "LKH02", 
                 DiemTichLuy = 0
             };
 

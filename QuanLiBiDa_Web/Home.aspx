@@ -13,9 +13,9 @@
 
                             </header>
                         </div>
-                        <div class="aligncenter">
+                       <%-- <div class="aligncenter">
                             <img src="/Content/assets/images/cyber.png" alt="image description" class="img-responsive">
-                        </div>
+                        </div>--%>
                     </div>
                 </section>
                 <!-- Features area of the page -->
@@ -163,6 +163,12 @@
                                     <h2>Đặt bàn ngay</h2>
                                 </header>
                         
+                               <div class="form-group">
+                                    <label for="loaiBan">Chọn loại bàn:</label>
+                                    <asp:DropDownList ID="loaiBan" runat="server" CssClass="form-control select-khuvuc" AutoPostBack="True" OnSelectedIndexChanged="loaiBan_SelectedIndexChanged">
+                                        <asp:ListItem Text="-- Chọn loại bàn --" Value="" />
+                                    </asp:DropDownList>
+                                </div>
 
                                 <div class="form-group">
                                     <label for="khuVuc">Chọn khu vực:</label>
@@ -178,6 +184,10 @@
                                     <label for="thoiGianDatBan">Chọn ngày và giờ đặt bàn:</label>
                                     <input type="datetime-local" id="thoiGianDatBan" name="thoiGianDatBan" class="form-control select-khuvuc" >
                                 </div>
+                                <div class="form-group">
+                                    <label for="thoiGianKTDatCoc">Chọn thời gian kết thúc</label>
+                                    <input type="datetime-local" id="thoiGianKTDatCoc" name="thoiGianKTDatCoc" class="form-control select-khuvuc" />
+                                </div>
 
 
                                 <asp:Button ID="btnSubmit" runat="server" Text="Đặt bàn" CssClass="btn btn-info" OnClick="btnSubmit_Click" />
@@ -190,45 +200,7 @@
                 <!-- Brands area of the page -->
               
             </main>
-                 <%--<script type="text/javascript">
-                     document.addEventListener("DOMContentLoaded", function () {
-                         var khuVucDropdown = document.getElementById("<%= khuVuc.ClientID %>");
-                         var banDropdown = document.getElementById("<%= ban.ClientID %>");
-                         var hiddenBanField = document.getElementById("<%= selectedBan.ClientID %>");
-
-                         khuVucDropdown.addEventListener("change", function () {
-                             var selectedKhuVuc = khuVucDropdown.value;
-
-                             // Xóa tất cả các tùy chọn hiện có trong dropdown bàn
-                             while (banDropdown.options.length > 1) {
-                                 banDropdown.remove(1);
-                             }
-
-                             // Lọc danh sách bàn theo khu vực được chọn
-                             if (selectedKhuVuc && banData) {
-                                 var filteredBans = banData.filter(function (ban) {
-                                     return ban.MaKV === selectedKhuVuc;
-                                 });
-
-                                 // Thêm các tùy chọn bàn phù hợp vào dropdown bàn
-                                 filteredBans.forEach(function (ban) {
-                                     var option = document.createElement("option");
-                                     option.value = ban.MaBan;
-                                     option.text = ban.TenBan;
-                                     banDropdown.add(option);
-                                 });
-                             }
-                         });
-
-                         banDropdown.addEventListener("change", function () {
-                             hiddenBanField.value = banDropdown.value;  // Lưu giá trị bàn vào HiddenField
-                         });
-                     });
-
-
-
-
-                </script>--%>
+                
 
     </asp:Content>
 

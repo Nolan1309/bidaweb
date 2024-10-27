@@ -33,5 +33,27 @@ namespace Web_DAL.Properties {
                 return ((string)(this["DoAnQuanLyQuanBida1ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-MEUMH4V;Initial Catalog=DoAnQuanLyQuanBida;Integrated Securit" +
+            "y=True")]
+        public string DoAnQuanLyQuanBidaConnectionString {
+            get {
+                return ((string)(this["DoAnQuanLyQuanBidaConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-MEUMH4V;Initial Catalog=DoAnQuanLyQuanBida2;Integrated Securi" +
+            "ty=True")]
+        public string DoAnQuanLyQuanBida2ConnectionString {
+            get {
+                return ((string)(this["DoAnQuanLyQuanBida2ConnectionString"]));
+            }
+        }
     }
 }

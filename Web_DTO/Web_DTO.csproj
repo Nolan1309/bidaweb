@@ -42,13 +42,15 @@
     <Compile Include="BAN.cs" />
     <Compile Include="BangThongKe.cs" />
     <Compile Include="CHITIETHOADON.cs" />
+    <Compile Include="ChiTietNiemYetDTO.cs" />
     <Compile Include="HangHoa.cs" />
     <Compile Include="HoaDonDTO.cs" />
     <Compile Include="KhachHang.cs" />
-    <Compile Include="KHUVUC.cs" />
-    <Compile Include="LoaiBan.cs" />
+    <Compile Include="KhuVucDTO.cs" />
+    <Compile Include="LoaiBanDTO.cs" />
     <Compile Include="LOAIHH.cs" />
     <Compile Include="NhanVien.cs" />
+    <Compile Include="NiemYetDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

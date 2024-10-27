@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Web_DTO
 {
-    public class KhuVuc
+    public class KhuVucDTO
     {
         public string MaKV { get; set; }
         public string TenKV { get; set; }
-        public int GiaTien { get; set; }
+        public int? GiaTien { get; set; }
         public int? MaLoaiBan { get; set; }
     }
 

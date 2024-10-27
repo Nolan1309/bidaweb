@@ -93,7 +93,7 @@ namespace Web_DAL
 
             using (SqlConnection connection = db.Open())
             {
-                string query = "SELECT MaBan, TenBan, TrangThai FROM BAN WHERE MaBan = @MaBan";
+                string query = "SELECT MaBan, TenBan, TrangThai, MaKV  FROM BAN WHERE MaBan = @MaBan";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@MaBan", maBan);
 
@@ -104,7 +104,8 @@ namespace Web_DAL
                     {
                         MaBan = reader["MaBan"].ToString(),
                         TenBan = reader["TenBan"].ToString(),
-                        TrangThai = reader["TrangThai"].ToString()
+                        TrangThai = reader["TrangThai"].ToString(),
+                        MaKV = reader["MaKV"].ToString()
                     };
                 }
             }
@@ -112,7 +113,7 @@ namespace Web_DAL
             return ban;
         }
 
-        public void UpdateBanTrangThai(string maBan, string maKH, string trangThai, HoaDonDTO hoaDonMoi)
+        public void UpdateBanTrangThai(string maBan, string maKV, string trangThai, HoaDonDTO hoaDonMoi)
         {
             using (var db = new ConnectContextDataContext()) // Thay thế bằng tên DbContext của bạn
             {
@@ -123,8 +124,8 @@ namespace Web_DAL
                 {
                     // Cập nhật trạng thái và mã khách hàng
                     ban.TrangThai = trangThai;
-                    ban.MaKH = maKH;
-                    ban.HDHienTai = hoaDonMoi.MaHDBH;
+                    ban.MaKV = maKV;
+              
                   
                     // Lưu các thay đổi vào cơ sở dữ liệu
                     db.SubmitChanges();

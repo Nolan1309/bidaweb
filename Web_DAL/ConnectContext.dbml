@@ -1,13 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DoAnQuanLyQuanBida1" Class="ConnectContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-MEUMH4V;Initial Catalog=DoAnQuanLyQuanBida1;Integrated Security=True" SettingsObjectName="Web_DAL.Properties.Settings" SettingsPropertyName="DoAnQuanLyQuanBida1ConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DoAnQuanLyQuanBida2" Class="ConnectContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-MEUMH4V;Initial Catalog=DoAnQuanLyQuanBida2;Integrated Security=True" SettingsObjectName="Web_DAL.Properties.Settings" SettingsPropertyName="DoAnQuanLyQuanBida2ConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.BAN" Member="BANs">
     <Type Name="BAN">
       <Column Name="MaBan" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TenBan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MaKV" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="TrangThai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="HDHienTai" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MaKH" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="BAN_ChiTietNiemYetBan" Member="ChiTietNiemYetBans" ThisKey="MaBan" OtherKey="MaBan" Type="ChiTietNiemYetBan" />
       <Association Name="BAN_HOADON" Member="HOADONs" ThisKey="MaBan" OtherKey="MaBan" Type="HOADON" />
       <Association Name="KHUVUC_BAN" Member="KHUVUC" ThisKey="MaKV" OtherKey="MaKV" Type="KHUVUC" IsForeignKey="true" />
     </Type>
@@ -35,6 +34,15 @@
       <Column Name="ThanhTien" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="HANGHOA_CHITIETHOADON" Member="HANGHOA" ThisKey="MaHH" OtherKey="MaHH" Type="HANGHOA" IsForeignKey="true" />
       <Association Name="HOADON_CHITIETHOADON" Member="HOADON" ThisKey="MaHDBH" OtherKey="MaHDBH" Type="HOADON" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChiTietNiemYetBan" Member="ChiTietNiemYetBans">
+    <Type Name="ChiTietNiemYetBan">
+      <Column Name="MaBan" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaNiemYet" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GiaTri" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="BAN_ChiTietNiemYetBan" Member="BAN" ThisKey="MaBan" OtherKey="MaBan" Type="BAN" IsForeignKey="true" />
+      <Association Name="NiemYet_ChiTietNiemYetBan" Member="NiemYet" ThisKey="MaNiemYet" OtherKey="MaNiemYet" Type="NiemYet" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.DM_ManHinh" Member="DM_ManHinhs">
@@ -70,6 +78,8 @@
       <Column Name="ThoiGianRa" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="ThoiGianDatCoc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="TienDatCoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ThoiGianKTDatCoc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SoPhutTreToiDa" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="HOADON_CHITIETHOADON" Member="CHITIETHOADONs" ThisKey="MaHDBH" OtherKey="MaHDBH" Type="CHITIETHOADON" />
       <Association Name="BAN_HOADON" Member="BAN" ThisKey="MaBan" OtherKey="MaBan" Type="BAN" IsForeignKey="true" />
       <Association Name="KHACHHANG_HOADON" Member="KHACHHANG" ThisKey="MaKH" OtherKey="MaKH" Type="KHACHHANG" IsForeignKey="true" />
@@ -135,6 +145,13 @@
       <Column Name="HoatDong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="NHANVIEN_HOADON" Member="HOADONs" ThisKey="MaNV" OtherKey="MaNV" Type="HOADON" />
       <Association Name="NHANVIEN_QL_NguoiDungNhomNguoiDung" Member="QL_NguoiDungNhomNguoiDungs" ThisKey="MaNV" OtherKey="TenDangNhap" Type="QL_NguoiDungNhomNguoiDung" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NiemYet" Member="NiemYets">
+    <Type Name="NiemYet">
+      <Column Name="MaNiemYet" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenNiemYet" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="NiemYet_ChiTietNiemYetBan" Member="ChiTietNiemYetBans" ThisKey="MaNiemYet" OtherKey="MaNiemYet" Type="ChiTietNiemYetBan" />
     </Type>
   </Table>
   <Table Name="dbo.QL_NguoiDungNhomNguoiDung" Member="QL_NguoiDungNhomNguoiDungs">

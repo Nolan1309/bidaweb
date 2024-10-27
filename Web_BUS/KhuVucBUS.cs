@@ -16,9 +16,17 @@ namespace Web_BUS
             khuVucDAL = new KhuVucDAL();
         }
 
-        public List<KhuVuc> GetAllKhuVuc()
+        public List<KhuVucDTO> GetAllKhuVuc()
         {
             return khuVucDAL.GetAllKhuVuc();
+        }
+        public List<KhuVucDTO> GetKhuVucByLoaiBan(int maLoaiBan)
+        {
+            return khuVucDAL.GetKhuVucByLoaiBan(maLoaiBan);
+        }
+        public KhuVucDTO GetKhuVucByMa(string maKV)
+        {
+            return khuVucDAL.GetKhuVucByMa(maKV);
         }
     }
 }

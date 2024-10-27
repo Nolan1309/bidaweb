@@ -9,11 +9,15 @@ namespace Web_DAL
 {
     public class KhuVucDAL
     {
-        //private string connectionString = "your_connection_string_here"; // Thay thế bằng chuỗi kết nối của bạn
+        private ConnectContextDataContext _context; 
         DatabaseConnection db = new DatabaseConnection();
-        public List<KhuVuc> GetAllKhuVuc()
+        public KhuVucDAL()
+            {
+                _context = new ConnectContextDataContext();
+            }
+        public List<KhuVucDTO> GetAllKhuVuc()
         {
-            List<KhuVuc> khuVucList = new List<KhuVuc>();
+            List<KhuVucDTO> khuVucList = new List<KhuVucDTO>();
 
             using (SqlConnection connection = db.Open())
             {
@@ -24,7 +28,7 @@ namespace Web_DAL
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    KhuVuc kv = new KhuVuc()
+                    KhuVucDTO kv = new KhuVucDTO()
                     {
                         MaKV = reader["MaKV"].ToString(),
                         TenKV = reader["TenKV"].ToString(),
@@ -37,6 +41,37 @@ namespace Web_DAL
             db.Close();
 
             return khuVucList;
+        }
+
+
+        public List<KhuVucDTO> GetKhuVucByLoaiBan(int maLoaiBan)
+        {
+            var query = from kv in _context.KHUVUCs
+                        where kv.MaLoaiBan == maLoaiBan
+                        select new KhuVucDTO
+                        {
+                            MaKV = kv.MaKV,
+                            TenKV = kv.TenKV,
+                            GiaTien = kv.GiaTien , 
+                            MaLoaiBan = kv.MaLoaiBan
+                        };
+
+            return query.ToList();
+        }
+        public KhuVucDTO GetKhuVucByMa(string maKV)
+        {
+            var khuVuc = _context.KHUVUCs.FirstOrDefault(kv => kv.MaKV == maKV);
+            if (khuVuc != null)
+            {
+                return new KhuVucDTO
+                {
+                    MaKV = khuVuc.MaKV,
+                    TenKV = khuVuc.TenKV,
+                    GiaTien = khuVuc.GiaTien,
+                    MaLoaiBan = khuVuc.MaLoaiBan
+                };
+            }
+            return null;
         }
     }
 }

@@ -9,12 +9,12 @@ namespace Web_DAL
 {
     public class HoaDonDAL
     {
-        // Thêm hóa đơn mới khi khách hàng đặt bàn
+  
         public void ThemHoaDon(HoaDonDTO hoaDon)
         {
-            using (var db = new ConnectContextDataContext()) // Thay bằng tên DataContext của bạn
+            using (var db = new ConnectContextDataContext()) 
             {
-                // Tạo đối tượng HOADON mới
+         
                 var hoaDonMoi = new HOADON
                 {
                     MaHDBH = hoaDon.MaHDBH,
@@ -27,11 +27,7 @@ namespace Web_DAL
                     ThoiGianDatCoc = hoaDon.ThoiGianDatCoc,
                     TienDatCoc = hoaDon.TienDatCoc
                 };
-
-                // Thêm hóa đơn mới vào bảng HOADON
                 db.HOADONs.InsertOnSubmit(hoaDonMoi);
-
-                // Lưu thay đổi vào cơ sở dữ liệu
                 db.SubmitChanges();
             }
         }
